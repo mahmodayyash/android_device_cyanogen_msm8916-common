@@ -20,10 +20,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.hwc.ptor.enable=true \
     debug.enable.sglscale=1
 
-# Assertive Display
-ro.qcom.ad=1
-ro.qcom.ad.calib.data=/system/etc/ad_calib.cfg    
-
 ifeq ($(TARGET_BOARD_PLATFORM_VARIANT),msm8916)
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.opengles.version=196608
