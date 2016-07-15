@@ -18,4 +18,4 @@ PRODUCT_PROPERTY_OVERRIDES += \
     audio.offload.pcm.16bit.enable=false \
     audio.offload.pcm.24bit.enable=true \
     use.voice.path.for.pcm.voip=true \
-	persist.audio.fluence.voicecomm=true
+
