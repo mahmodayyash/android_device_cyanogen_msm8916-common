@@ -23,9 +23,10 @@ on enable-low-power
     write /sys/class/devfreq/qcom,gpubw.61/bw_hwmon/io_percent 40
     write /sys/class/devfreq/qcom,mincpubw.65/governor "cpufreq"
 
-    # Disable thermal core_control to update interactive gov settings
+   # Disable thermal core_control and cluster plug to update interactive gov settings
     write /sys/module/msm_thermal/core_control/enabled 0
-
+    write /sys/module/cluster_plug/parameters/active 0
+    
     # Enable governor for perf cluster
     write /sys/devices/system/cpu/cpu0/online 1
     write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor "interactive"
@@ -50,8 +51,9 @@ on enable-low-power
     write /sys/devices/system/cpu/cpu4/cpufreq/interactive/min_sample_time 40000
     write /sys/devices/system/cpu/cpu4/cpufreq/scaling_min_freq 800000
 
-    # Enable thermal core_control now
+    # Enable thermal core_control and cluster plug now
     write /sys/module/msm_thermal/core_control/enabled 1
+    write /sys/module/cluster_plug/parameters/active 1
 
     # HMP scheduler (big.Little cluster related) settings
     write /proc/sys/kernel/sched_upmigrate 75
