@@ -23,7 +23,6 @@
 #include <utils/Log.h>
 
 #define BIG_MAX_CPU_PATH "/sys/devices/system/cpu/cpu0/core_ctl/max_cpus"
-
 static void sysfs_write(char *path, char *s)
 {
     char buf[80];
