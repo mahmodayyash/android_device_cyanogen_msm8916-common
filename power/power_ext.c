@@ -22,7 +22,6 @@
 #define LOG_TAG "PowerHAL_MSM8939_Ext"
 #include <utils/Log.h>
 
-
 #define LOW_POWER_MODE_PATH "/sys/module/cluster_plug/parameters/low_power_mode"
 
 static void sysfs_write(char *path, char *s)
@@ -48,6 +47,6 @@ static void sysfs_write(char *path, char *s)
 
 void cm_power_set_interactive_ext(int on)
 {
-   ALOGD("%s cluster-plug low power mode", on ? "disabling" : "enabling");
-     sysfs_write(LOW_POWER_MODE_PATH, on ? "0" : "1");
+    ALOGD("%s cluster-plug low power mode", on ? "disabling" : "enabling");
+    sysfs_write(LOW_POWER_MODE_PATH, on ? "0" : "1");
 }
