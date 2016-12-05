@@ -9,12 +9,15 @@ PRODUCT_COPY_FILES += \
 
 # Properties
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.qualcomm.bt.hci_transport=smd \
-qcom.bluetooth.soc=smd \
+    qcom.bluetooth.soc=smd \
     qcom.bt.dev_power_class=1 \
     ro.qualcomm.bt.hci_transport=smd \
     ro.bluetooth.dun=false \
     ro.bluetooth.sap=false \
+    qcom.bluetooth.soc=smd \
+    ro.bluetooth.dun=true \
+    ro.bluetooth.hfp.ver=1.7 \
+    ro.bluetooth.sap=true \
     ro.qualcomm.bluetooth.ftp=true \
     ro.qualcomm.bluetooth.hfp=true \
     ro.qualcomm.bluetooth.hsp=true \
@@ -22,3 +25,6 @@ qcom.bluetooth.soc=smd \
     ro.qualcomm.bluetooth.nap=true \
     ro.qualcomm.bluetooth.opp=true \
     ro.qualcomm.bluetooth.pbap=true
+    ro.qualcomm.bluetooth.pbap=true \
+    ro.qualcomm.bt.hci_transport=smd
+
