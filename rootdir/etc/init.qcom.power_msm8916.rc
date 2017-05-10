@@ -63,7 +63,7 @@ write /sys/devices/system/cpu/cpufreq/interactive/above_hispeed_delay "25000 109
     # Update foreground and background cpusets
     # Reserve CPU 3 for the top app
     write /dev/cpuset/foreground/cpus 0-2
-    write /dev/cpuset/foreground/boost/cpus 0-3
+    write /dev/cpuset/foreground/boost/cpus 0-2
     write /dev/cpuset/background/cpus 0-2
     write /dev/cpuset/system-background/cpus 0-1
     write /dev/cpuset/top-app/cpus 0-3
