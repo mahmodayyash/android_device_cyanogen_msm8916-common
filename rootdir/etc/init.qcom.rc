@@ -289,11 +289,7 @@ service irsc_util /system/bin/irsc_util "/etc/sec_config"
 service rmt_storage /system/bin/rmt_storage
     class core
     user root
-
-service rfs_access /system/bin/rfs_access
-   class core
-   user system
-   group system net_raw
+    group wakelock
 
 service config_bt_addr /system/bin/btnvtool -O
     class core
@@ -331,7 +327,7 @@ on property:hw.fm.init=1
 service qmuxd /system/bin/qmuxd
     class main
     user root
-    group radio audio bluetooth gps qcom_diag
+    group radio audio bluetooth gps qcom_diag wakelock
 
 service msm_irqbalance /system/bin/msm_irqbalance -f /system/vendor/etc/msm_irqbalance.conf
     class core
@@ -341,7 +337,11 @@ service msm_irqbalance /system/bin/msm_irqbalance -f /system/vendor/etc/msm_irqb
 
 service netmgrd /system/bin/netmgrd
     class main
+<<<<<<< HEAD
  
+=======
+    group system wakelock
+>>>>>>> a8c21b19ee36805c6eb63e8f7f0dd2605feafb1e
 
 on property:ro.use_data_netmgrd=false
     # netmgr not supported on specific target
@@ -484,4 +484,8 @@ service wcnss-service /system/bin/wcnss_service
     class main
     user system
     group system wifi radio
+    oneshot
+
+service qcom-mem /system/bin/sh /system/etc/init.qcom.mem.sh
+    disabled
     oneshot
